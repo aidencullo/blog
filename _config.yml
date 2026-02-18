@@ -1,0 +1,22 @@
+title: Aiden's Blog
+description: Personal thoughts on tech, code, and everything in between.
+url: "https://aidensroom.github.io"
+baseurl: ""
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+header_pages:
+  - about.md
+
+permalink: /:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
