@@ -1,7 +1,7 @@
 title: Aiden's Personal Blog
 description: Personal thoughts on tech, code, and everything in between.
-url: "https://aidencullo.github.io"
-baseurl: "/blog"
+url: "https://blog.aidencullo.com"
+baseurl: ""
 
 theme: minima
 

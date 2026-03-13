@@ -1,0 +1,77 @@
+---
+layout: default
+---
+
+<style>
+  .post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .post-button {
+    display: block;
+    border: 2px solid #333;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.75rem;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .post-button:hover {
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .post-button .post-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 0 0.2rem;
+  }
+
+  .post-button .post-meta {
+    font-size: 0.8rem;
+    opacity: 0.6;
+  }
+
+  .post-button .post-excerpt {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    font-size: 0.9rem;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  }
+
+  .post-button:hover .post-excerpt {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 0.6rem;
+  }
+</style>
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      <li>
+        <a class="post-button" href="{{ post.url | relative_url }}">
+          <div class="post-title">{{ post.title | escape }}</div>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <div class="post-meta">{{ post.date | date: date_format }}</div>
+          <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</div>
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>
