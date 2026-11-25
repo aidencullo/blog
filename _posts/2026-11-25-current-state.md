@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Job, Job, Job, Money, Money, Money"
+title: "All Quiet on the Job Front"
 date: 2026-11-25
 ---
 
