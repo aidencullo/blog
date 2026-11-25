@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Current State"
+title: "Job, Job, Job, Money, Money, Money"
 date: 2026-11-25
 ---
 
